@@ -10,3 +10,10 @@ Some of the challenges I faced were :
 ## Installation
 
 Just download the package, install with NPM and run on your local server.
+
+### Thanks to
+
+
+https://ui.dev/why-react-query?s=email-2-wrq&ck_subscriber_id=2188120185
+
+I was inspired to go through the simple code here to understand what are the issues with React hooks and fetching data, it turns out that a simple implementation of UseEffect and tracking the data with state can cause layout issues, inconsistency between renders and bad UI from lack of loading states.
