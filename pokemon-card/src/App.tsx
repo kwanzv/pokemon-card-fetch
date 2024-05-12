@@ -1,33 +1,15 @@
 import * as React from "react";
 import PokemonCard from "./PokemonCard";
+import useFetch from "./useFetch";
 import "./App.css";
 
 export default function App() {
   const [id, setId] = React.useState(1);
-  const [pokemon, setPokemon] = React.useState(null);
-  const [isLoading, setIsLoading] = React.useState(true);
-  const [error, setError] = React.useState(null);
-  React.useEffect(() => {
-    const handleFetchPokemon = async () => {
-      setPokemon(null);
-      setIsLoading(true);
-      setError(null);
-      try {
-        const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${id}`);
-        if (response.ok === false) {
-          throw new Error(`Error fetching pokemon #${id}`);
-        }
-        const data = await response.json();
-        setPokemon(data);
-        setIsLoading(false);
-        // eslint-disable-next-line @typescript-eslint/no-explicit-any
-      } catch (e: any) {
-        setError(e.message);
-      }
-    };
-
-    handleFetchPokemon();
-  }, [id]);
+  const {
+    data: pokemon,
+    isLoading,
+    error,
+  } = useFetch(`https://pokeapi.co/api/v2/pokemon/${id}`);
 
   interface ButtonGroupProps {
     setPokemonId: React.Dispatch<React.SetStateAction<number>>;
