@@ -11,6 +11,23 @@ Some of the challenges I faced were :
 
 Just download the package, install with NPM and run on your local server.
 
+
+Development
+
+    Clone the repository and change directory.
+
+git clone https://github.com/kwanzv/pokemon-card-fetch/tree/main
+cd pokemon-card
+
+    Install npm dependencies
+
+npm install
+
+    Run the app locally.
+
+npm start
+
+
 ### Thanks to
 
 
